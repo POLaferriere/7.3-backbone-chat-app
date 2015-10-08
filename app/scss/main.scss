@@ -1,21 +1,131 @@
 @import '../../bower_components/bourbon/app/assets/stylesheets/bourbon';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
-
+@import '../../bower_components/font-awesome/scss/font-awesome.scss';
 // Typography
 $base-font-family: $helvetica;
-
 // Colors
 $blue: #477dca;
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
 $very-light-gray: #fafafa;
-
 $base-font-color: $dark-gray;
 $base-background-color: $very-light-gray;
-
+$main: #0070FB;
+$main-post: #79F7D9;
+$darker-main: #00306D;
+$light-text: #ADC5FD;
+$dark-text: #1A1D72;
 body {
-  background-color: $base-background-color;
-  color: $base-font-color;
-  font-family: $base-font-family;
+    background-color: $base-background-color;
+    color: $base-font-color;
+    font-family: $base-font-family;
+}
+
+//----------------Login--------------//
+.login-view {
+    @include clearfix();
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    .login-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: $main;
+        padding: 30px;
+        border-radius: 5px;
+        text-align: center;
+        >* {
+            display: block;
+        }
+        h1 {
+            white-space: nowrap;
+            color: white;
+        }
+        input[type='text'] {
+            width: 100%;
+            line-height: 20px;
+            text-align: center;
+        }
+        input[type='submit'] {
+            width: 300px;
+            margin: 0 auto;
+            background: $darker-main;
+            color: white;
+            border: none;
+            margin-top: 20px;
+            padding: 15px 0;
+            border-radius: 3px;
+            text-transform: uppercase;
+            word-break: break-all;
+        }
+    }
+}
+
+//---------------Create Form---------------//
+.create-form {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 10px;
+    background: white;
+    input {
+        width: 85%;
+        line-height: 30px;
+        border-radius: 3px;
+        margin-left: 2.5%;
+        padding: 5px 15px;
+        border: 1px solid grey;
+    }
+    i {
+        position: relative;
+        top: 7px;
+        font-size: 40px;
+        margin-left: 2.5%;
+        cursor: pointer;
+        color: $main;
+    }
+}
+
+.list-view {
+    margin-bottom: 100px;
+}
+
+.list-item {
+	list-style: none;
+	padding-left: 20px;
+	margin: 20px 0;
+	
+    .item-container {
+    	display: block;
+        background: $main-post;
+	border-radius: 7px;
+        > * {
+            display: inline-block;
+        }
+        h1 {
+            width: 15%;
+            font-size: 20px;
+            line-height: 40px;
+            color: $dark-text;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        p {
+        	width: 75%;	
+        	padding-left: 20px;
+        	color: $dark-text;
+        	border-left: 1px solid #BAFBF0;
+        }
+    }
+    .created {
+    	margin-left: 225px;
+    	font-size: 14px;
+    	margin-top: 0;
+    }
 }
