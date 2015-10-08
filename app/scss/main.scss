@@ -11,121 +11,170 @@ $light-gray: #ddd;
 $very-light-gray: #fafafa;
 $base-font-color: $dark-gray;
 $base-background-color: $very-light-gray;
-$main: #0070FB;
-$main-post: #79F7D9;
-$darker-main: #00306D;
-$light-text: #ADC5FD;
-$dark-text: #1A1D72;
-body {
-    background-color: $base-background-color;
-    color: $base-font-color;
+$main: #0070fb;
+$main-post: #79f7d9;
+$darker-main: #00306d;
+$light-text: #adc5fd;
+$dark-text: #1a1d72;
+body
+{
     font-family: $base-font-family;
+
+    color: $base-font-color;
+    background-color: $base-background-color;
 }
 
 //----------------Login--------------//
-.login-view {
-    @include clearfix();
+.login-view
+{
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    .login-container {
+
+    background-color: rgba(0, 0, 0, .7);
+
+    @include clearfix();
+    .login-container
+    {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
-        background: $main;
+
         padding: 30px;
-        border-radius: 5px;
+
+        transform: translate(-50%, -50%);
         text-align: center;
-        >* {
+
+        border-radius: 5px;
+        background: $main;
+        > *
+        {
             display: block;
         }
-        h1 {
+        h1
+        {
             white-space: nowrap;
+
             color: white;
         }
-        input[type='text'] {
-            width: 100%;
+        input[type='text']
+        {
             line-height: 20px;
+
+            width: 100%;
+
             text-align: center;
         }
-        input[type='submit'] {
+        input[type='submit']
+        {
             width: 300px;
             margin: 0 auto;
-            background: $darker-main;
-            color: white;
-            border: none;
             margin-top: 20px;
             padding: 15px 0;
-            border-radius: 3px;
+
             text-transform: uppercase;
             word-break: break-all;
+
+            color: white;
+            border: none;
+            border-radius: 3px;
+            background: $darker-main;
         }
     }
 }
 
 //---------------Create Form---------------//
-.create-form {
-    width: 100%;
+.create-form
+{
     position: fixed;
     bottom: 0;
+
+    width: 100%;
     padding: 10px;
+
     background: white;
-    input {
-        width: 85%;
+    input
+    {
         line-height: 30px;
-        border-radius: 3px;
-        margin-left: 2.5%;
-        padding: 5px 15px;
+
+        width: 85%;
+        margin-left: 5%;
+        padding: 5px 15px 5px 50px;
+
         border: 1px solid grey;
+        border-radius: 8px;
+        outline: none;
     }
-    i {
-        position: relative;
+    i
+    {
+        font-size: 48px;
+
+        position: absolute;
         top: 7px;
-        font-size: 40px;
-        margin-left: 2.5%;
+
+        margin-left: 5%;
+
         cursor: pointer;
+
         color: $main;
     }
 }
 
-.list-view {
+.list-view
+{
     margin-bottom: 100px;
 }
 
-.list-item {
-	list-style: none;
-	padding-left: 20px;
-	margin: 20px 0;
-	
-    .item-container {
-    	display: block;
+.list-item
+{
+    width: fit-content;
+    margin: 20px 0;
+    padding-left: 20px;
+
+    list-style: none;
+    .item-container
+    {
+        display: block;
+
+        border-radius: 7px;
         background: $main-post;
-	border-radius: 7px;
-        > * {
+        > *
+        {
             display: inline-block;
         }
-        h1 {
-            width: 15%;
-            font-size: 20px;
-            line-height: 40px;
-            color: $dark-text;
+        h1
+        {
+            font-size: 18px;
+            line-height: 25px;
+
+            width: 20%;
+            min-width: 200px;
+            padding: 0 20px;
+
             text-align: center;
             text-transform: uppercase;
+
+            color: $dark-text;
         }
-        p {
-        	width: 75%;	
-        	padding-left: 20px;
-        	color: $dark-text;
-        	border-left: 1px solid #BAFBF0;
+        p
+        {
+            // width: 75%;	
+            min-width: 100px;
+            padding: 0 40px 0 20px;
+
+            vertical-align: top;
+
+            color: $dark-text;
+            border-left: 1px solid #bafbf0;
         }
     }
-    .created {
-    	margin-left: 225px;
-    	font-size: 14px;
-    	margin-top: 0;
+    .created
+    {
+        font-size: 14px;
+
+        margin-top: 0;
+        margin-left: 225px;
     }
 }

@@ -23,8 +23,6 @@ var MessageIndexView = BaseView.extend({
 		this.$el.append(this.messageListView.render().el);
 		this.$el.append(this.messageCreateView.render().el);
 		this.$el.append(this.loginView.render().el);
-		this.$el.append('<div id="bottom"></div>');
-		$('#bottom').scrollTop();
 		return this;
 	},
 
